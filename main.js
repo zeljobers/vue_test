@@ -7,8 +7,9 @@ const app = Vue.createApp({
             description: "slika jedna ima ovaj kontekst",
             image: "./assets/1.jpg",
             url: "https://www.roadmap.sh",
-            inStock: false,
+            inStock: true,
             inventory : 1,
+            onSale: true,
         }
     }
 

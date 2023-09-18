@@ -16,7 +16,7 @@
             {{description}}
         </p>
         <a :href="url">
-            <img :src="image" alt="bruh moment" width="100px">
+            <img :src="image" alt="bruh moment" style="height: 100px;">
         </a>
         
         <p v-show="inStock">In Stock</p> 
@@ -27,10 +27,12 @@
         <p v-else>
             Out of stock
         </p>
-        
+
         <p v-if="inventory > 10">In stock</p>
         <p v-else-if="inventory <=10 && inventory > 0">almost sold out</p>
         <p v-else>bruh</p>
+
+        <p v-show="onSale">On Sale</p>
 
     </div>
 
