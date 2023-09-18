@@ -51,6 +51,9 @@ app.component('product-display', {
 <button class="button" :class="{'button-disabled': !inStock}" @click="addToCart"  :disabled="!inStock">Add to Cart</button>
 <button @click="removeFromCart" :disabled="this.cart.indexOf(this.varijante[this.selectedVariant].id)===-1">Throw away from Cart</button>
 
+<review-list v-if="reviews.length" :reviews="reviews"></review-list>
+<review-form @review-submitted="addReview"></review-form>
+
 `, //smetao mu ladno komentar ovde
 
  data () {
@@ -77,6 +80,7 @@ app.component('product-display', {
              'background-color': '#344444' 
         },
         brand : "Vue Mastery",
+        reviews : [],
     }
 },
 methods: {
@@ -96,6 +100,9 @@ methods: {
             'background-color': '#344444' 
         };
         return this.styleSize;
+    },
+    addReview(review) {
+        this.reviews.push(review);
     },
 },
 computed : {
