@@ -15,6 +15,8 @@ app.component('review-list', {
             {{review.name}} gave this {{review.rating}} stars
             <br/>
             "{{review.review}}"
+            <br>
+            <span v-if="review.recommendation.length > 0">on (non)recommendation: {{review.recommendation}}</span>
             </li>
             
         </ul>
