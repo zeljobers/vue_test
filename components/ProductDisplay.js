@@ -3,6 +3,10 @@ app.component('product-display', {
         premium: {
             type: Boolean,
             required: true,
+        },
+        cart: {
+            type:Array,
+            required:true,
         }
     },
     template: 
@@ -45,7 +49,8 @@ app.component('product-display', {
     <li v-for="s in sizes" class="size-circle" :style="changeSizeStyle(s)"></li>
 </ul>
 <button class="button" :class="{'button-disabled': !inStock}" @click="addToCart"  :disabled="!inStock">Add to Cart</button>
-        <button @click="cart -= (cart == 0) ? 0 : 1">Throw away from Cart</button>
+<button @click="removeFromCart" :disabled="this.cart.indexOf(this.varijante[this.selectedVariant].id)===-1">Throw away from Cart</button>
+
 `, //smetao mu ladno komentar ovde
 
  data () {
@@ -59,13 +64,12 @@ app.component('product-display', {
         details: ['50% znanje', "30% vestina", "20% da zapamtim mu ime"],
         varijante: [
             {id: 1, ime: "Jovan", prezime: "Jovanović", image: "./assets/1.jpg", quantity : 50},
-            {id:2, ime: "Marko", prezime: "Marković", image: "./assets/2.jpg", quantity : 0},
+            {id:2, ime: "Marko", prezime: "Marković", image: "./assets/2.jpg", quantity : 30},
 
         ],
         sizes : [
             50, 70, 90, 100, 120
         ],
-        cart: 0,
         styleExample : { 'background-color' : "#00FF00" },
         styleSize : {
              'width' : 10+'px', 
@@ -78,6 +82,9 @@ app.component('product-display', {
 methods: {
     addToCart() {
         this.$emit('add-to-cart', this.varijante[this.selectedVariant].id);
+    },
+    removeFromCart() {
+        this.$emit('remove-from-cart', this.varijante[this.selectedVariant].id);
     },
     updateVariant(index) {
         this.selectedVariant = index;

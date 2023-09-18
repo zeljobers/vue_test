@@ -13,7 +13,7 @@
             {{ title }}
             <!-- {{ `${product} ${brand}`}} -->
         </h1>
-        <product-display :premium="premium" @add-to-cart="updateCart"></product-display>
+        <product-display :premium="premium" @add-to-cart="updateCart"  @remove-from-cart="cleanCart" :cart="cart"></product-display>
         <p>
             {{description}}
         </p>
