@@ -61,7 +61,12 @@
         </ul>
 
         <div class="cart">Cart( {{cart}} )</div>
-        <button @click="addToCart">Add to Cart</button>
+        <button class="button" :class="{'button-disabled': !inStock}" @click="addToCart"  :disabled="!inStock">Add to Cart</button>
+                                <!--      ^- ovo je ime klase ^- uslov klase -->
+        <!-- obrati paznju da kada je kebab-case da uvek mora da se naznači apostrofima, jer je js -->
+
+        <!-- prica o vise klasa -->
+        <!-- prica o ternarnim operatorima -->
         <button @click="cart -= (cart == 0) ? 0 : 1">Throw away from Cart</button>
     </div>
 

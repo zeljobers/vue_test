@@ -5,7 +5,7 @@ const app = Vue.createApp({
             description: "slika jedna ima ovaj kontekst",
             image: "./assets/1.jpg",
             url: "https://www.roadmap.sh",
-            inStock: true,
+            inStock: false,
             inventory : 1,
             onSale: true,
             details: ['50% znanje', "30% vestina", "20% da zapamtim mu ime"],

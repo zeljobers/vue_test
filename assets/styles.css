@@ -4,3 +4,15 @@
     border-radius: 50%;
     border: 1px solid #333333;
 }
+
+.button {
+    border: 1px solid #00FF00;
+    background-color: aqua;
+    color:#333333;
+}
+
+.button-disabled {
+    background-color: rgb(201, 201, 36);
+    cursor: not-allowed;
+
+}
