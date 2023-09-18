@@ -16,3 +16,8 @@
     cursor: not-allowed;
 
 }
+
+.out-of-stock-img {
+    filter: blur(1px);
+    border: 5px solid red;
+}

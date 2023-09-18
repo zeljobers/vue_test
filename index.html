@@ -16,7 +16,7 @@
             {{description}}
         </p>
         <a :href="url">
-            <img :src="image" alt="bruh moment" style="height: 100px;">
+            <img :src="image" alt="bruh moment" style="height: 100px;" :class="{'out-of-stock-img':!inStock}">
         </a>
         
         <p v-show="inStock">In Stock</p> 
