@@ -16,6 +16,9 @@ const app = Vue.createApp({
                 {id:2, ime: "Marko", prezime: "Marković"},
 
             ],
+            sizes : [
+                "XS", "S", "M", "L", "XL"
+            ]
         }
     }
 
