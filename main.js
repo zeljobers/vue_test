@@ -15,7 +15,7 @@ const app = Vue.createApp({
 
             ],
             sizes : [
-                "XS", "S", "M", "L", "XL"
+                50, 70, 90, 100, 120
             ],
             cart: 0,
 

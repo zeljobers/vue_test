@@ -39,15 +39,22 @@
         </ul>
 
         <ul>
-            <li v-for="v in varijante" :key="v.id" @mouseover="updateImage(v.image)">{{v.ime}} {{v.prezime}}</li>
+            <li v-for="v in varijante" 
+            :key="v.id" 
+            @mouseover="updateImage(v.image)">{{v.ime}} {{v.prezime}}</li>
         </ul>
         <ul>
-            <li v-for="s in sizes">{{s}}</li>
+            <li v-for="s in sizes"
+                class="size-circle"
+                :style="{ width : s+'px', height: s+'px' }"></li>
+                <!--     ^--ovo je javascript i koristi se camelCase -->
+            <li v-for="s in sizes"
+            class="size-circle"
+            :style="{ 'width' : s+'px', 'height': s+'px', 'background-color': '#344444' }"></li>
+            <!-- ^-ovde se sad koristio na ovakav način kebab-case -->
         </ul>
 
         <div class="cart">Cart( {{cart}} )</div>
-        <!-- <button v-on:click="cart += 1">Add to Cart</button> -->
-        <!-- <button v-on:click="addToCart">Add to Cart</button> -->
         <button @click="addToCart">Add to Cart</button>
         <button @click="cart -= (cart == 0) ? 0 : 1">Throw away from Cart</button>
     </div>
