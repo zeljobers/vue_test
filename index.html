@@ -13,6 +13,7 @@
             {{ title }}
             <!-- {{ `${product} ${brand}`}} -->
         </h1>
+        <product-display :premium="premium"></product-display>
         <p>
             {{description}}
         </p>
@@ -56,6 +57,7 @@
     </div>
 
     <script src="./main.js"></script>
+    <script src="./components/ProductDisplay.js"></script>
     <script>
         const mountedApp = app.mount('#app')
     </script>
