@@ -15,11 +15,23 @@
         <p>
             {{description}}
         </p>
-        <!-- v-bind:src shorthand -->
         <a :href="url">
-            <img :src="image" alt="bruh moment">
+            <img :src="image" alt="bruh moment" width="100px">
         </a>
         
+        <p v-show="inStock">In Stock</p> 
+        <!-- u ovom slucaju samo da svojstvo display:none ako je false -->
+
+        
+        <p v-if="inStock">In Stock</p>
+        <p v-else>
+            Out of stock
+        </p>
+        
+        <p v-if="inventory > 10">In stock</p>
+        <p v-else-if="inventory <=10 && inventory > 0">almost sold out</p>
+        <p v-else>bruh</p>
+
     </div>
 
     <script src="./main.js"></script>
