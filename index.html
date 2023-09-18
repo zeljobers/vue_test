@@ -52,6 +52,12 @@
             class="size-circle"
             :style="{ 'width' : s+'px', 'height': s+'px', 'background-color': '#344444' }"></li>
             <!-- ^-ovde se sad koristio na ovakav način kebab-case -->
+            
+            <p :style="styleExample">yo</p>
+            <!-- style object binding -->
+
+            <li v-for="s in sizes" class="size-circle" :style="changeSizeStyle(s)"></li>
+            <!-- style object binding ubogi -->
         </ul>
 
         <div class="cart">Cart( {{cart}} )</div>

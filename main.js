@@ -18,7 +18,12 @@ const app = Vue.createApp({
                 50, 70, 90, 100, 120
             ],
             cart: 0,
-
+            styleExample : { 'background-color' : "#00FF00" },
+            styleSize : {
+                 'width' : 10+'px', 
+                 'height': 10+'px', 
+                 'background-color': '#344444' 
+            },
         }
     },
     methods: {
@@ -27,7 +32,15 @@ const app = Vue.createApp({
         },
         updateImage(vImage) {
             this.image = vImage;
-        }
+        },
+        changeSizeStyle(size){
+            this.styleSize = {
+                'width' : size+'px', 
+                'height': size+'px', 
+                'background-color': '#344444' 
+            };
+            return this.styleSize;
+        },
     }
 
 })
