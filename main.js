@@ -8,6 +8,8 @@ const app = Vue.createApp({
         return {
             product: "ChatGPTvADS",
             description: "slika jedna ima ovaj kontekst",
+            image: "./assets/1.jpg",
+            url: "https://www.roadmap.sh",
         }
     }
 
