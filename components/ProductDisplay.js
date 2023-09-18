@@ -43,7 +43,11 @@ app.component('product-display', {
    <p :style="styleExample">yo</p>
 
     <li v-for="s in sizes" class="size-circle" :style="changeSizeStyle(s)"></li>
-</ul>`, //smetao mu ladno komentar ovde
+</ul>
+<button class="button" :class="{'button-disabled': !inStock}" @click="addToCart"  :disabled="!inStock">Add to Cart</button>
+        <button @click="cart -= (cart == 0) ? 0 : 1">Throw away from Cart</button>
+`, //smetao mu ladno komentar ovde
+
  data () {
     return {
         product: "ChatGPTvADS",
@@ -73,7 +77,7 @@ app.component('product-display', {
 },
 methods: {
     addToCart() {
-        this.cart += 1
+        this.$emit('add-to-cart', this.varijante[this.selectedVariant].id);
     },
     updateVariant(index) {
         this.selectedVariant = index;
