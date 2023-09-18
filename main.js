@@ -1,5 +1,3 @@
-// const product="ChatGPTvADS"
-
 const app = Vue.createApp({
     data () {
         return {
@@ -12,13 +10,23 @@ const app = Vue.createApp({
             onSale: true,
             details: ['50% znanje', "30% vestina", "20% da zapamtim mu ime"],
             varijante: [
-                {id: 1, ime: "Jovan", prezime: "Jovanović"},
-                {id:2, ime: "Marko", prezime: "Marković"},
+                {id: 1, ime: "Jovan", prezime: "Jovanović", image: "./assets/1.jpg"},
+                {id:2, ime: "Marko", prezime: "Marković", image: "./assets/2.jpg"},
 
             ],
             sizes : [
                 "XS", "S", "M", "L", "XL"
-            ]
+            ],
+            cart: 0,
+
+        }
+    },
+    methods: {
+        addToCart() {
+            this.cart += 1
+        },
+        updateImage(vImage) {
+            this.image = vImage;
         }
     }
 
