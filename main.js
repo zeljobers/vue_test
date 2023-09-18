@@ -45,7 +45,7 @@ const app = Vue.createApp({
     computed : {
         title() {
 
-            return `${this.product} ${this.brand}`;
+            return `${this.product} ${this.brand} ${(this.onSale) ? 'is on sale' : ''}`;
         },
         image() {
             return this.varijante[this.selectedVariant].image;
@@ -53,6 +53,7 @@ const app = Vue.createApp({
         inStock() {
             return this.varijante[this.selectedVariant].quantity;
         },
+
     }
 
 })
