@@ -3,15 +3,14 @@ const app = Vue.createApp({
         return {
             product: "ChatGPTvADS",
             description: "slika jedna ima ovaj kontekst",
-            image: "./assets/1.jpg",
+            selectedVariant : 0,
             url: "https://www.roadmap.sh",
-            inStock: false,
             inventory : 1,
             onSale: true,
             details: ['50% znanje', "30% vestina", "20% da zapamtim mu ime"],
             varijante: [
-                {id: 1, ime: "Jovan", prezime: "Jovanović", image: "./assets/1.jpg"},
-                {id:2, ime: "Marko", prezime: "Marković", image: "./assets/2.jpg"},
+                {id: 1, ime: "Jovan", prezime: "Jovanović", image: "./assets/1.jpg", quantity : 50},
+                {id:2, ime: "Marko", prezime: "Marković", image: "./assets/2.jpg", quantity : 0},
 
             ],
             sizes : [
@@ -24,14 +23,15 @@ const app = Vue.createApp({
                  'height': 10+'px', 
                  'background-color': '#344444' 
             },
+            brand : "Vue Mastery",
         }
     },
     methods: {
         addToCart() {
             this.cart += 1
         },
-        updateImage(vImage) {
-            this.image = vImage;
+        updateVariant(index) {
+            this.selectedVariant = index;
         },
         changeSizeStyle(size){
             this.styleSize = {
@@ -40,6 +40,18 @@ const app = Vue.createApp({
                 'background-color': '#344444' 
             };
             return this.styleSize;
+        },
+    },
+    computed : {
+        title() {
+
+            return `${this.product} ${this.brand}`;
+        },
+        image() {
+            return this.varijante[this.selectedVariant].image;
+        },
+        inStock() {
+            return this.varijante[this.selectedVariant].quantity;
         },
     }
 
