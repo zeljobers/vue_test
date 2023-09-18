@@ -34,6 +34,15 @@
 
         <p v-show="onSale">On Sale</p>
 
+        <ul>
+            <li v-for="detail in details">{{detail}}</li>
+
+        </ul>
+
+        <ul>
+            <li v-for="v in varijante" :key="v.id">{{v.ime}} {{v.prezime}}</li>
+            <!-- za sada nije vidljiv uticaj, ali pružaju se pogodnosti poboljšanja performanse i kasnije će biti od koristi pri animacijama -->
+        </ul>
     </div>
 
     <script src="./main.js"></script>

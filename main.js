@@ -10,6 +10,12 @@ const app = Vue.createApp({
             inStock: true,
             inventory : 1,
             onSale: true,
+            details: ['50% znanje', "30% vestina", "20% da zapamtim mu ime"],
+            varijante: [
+                {id: 1, ime: "Jovan", prezime: "Jovanović"},
+                {id:2, ime: "Marko", prezime: "Marković"},
+
+            ],
         }
     }
 
